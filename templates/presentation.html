@@ -8,26 +8,28 @@
 
     </head>
 
-    <body> 
-        <button onclick='getData("allPairs")'>Click pairs</button>
-        <button onclick="getData('allValues')">Click values</button>
-        <button onclick="getData('allKeys')">Click keys</button>
-        <button onclick="clearData()">Clear Array Data</button>
-        <button onclick="addPlot()">Add new Plot</button>
+    <body>
+        <div id="mainDiv">
+            <div id="getData">
+                <button onclick='getData("allPairs")'>Click pairs</button>
+                <button onclick="getData('allValues')">Click values</button>
+                <button onclick="getData('allKeys')">Click keys</button>
 
-
-        </br>
                 </br>
-        </br>
-        </br>
-        </br>
-        </br>
-        </br>
-        <div id="plotDiv">
-            <div id="tester" style="width:800px;height:600px;"></div>
+                </br>
+                </br>
+                </br>
+                <div id="plotDiv" style="width:600px;height:400px;">
+                     <button onclick='addPlot()'>Add new plot</button>
+                    <button onclick="clearGraph(this)">Clear Graph</button>
+                    <button onclick="plotValues(this);">Plot Values</button>
+                </div>
+                </br>
+                </br>
+                </br>
+                </br>
+            </div>
         </div>
-        <button onclick="plotValues()">Plot Values</button>
-
     </body>
 
 </html>

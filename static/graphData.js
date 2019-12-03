@@ -1,4 +1,5 @@
-function plotValues() {
+// ---- plot the values on an existing HTML div element from the json values extracted from the Python API - REF getData
+function plotValues(thisElement) {
     var itemArray = []
 
     // ---- check is the array is empty
@@ -19,24 +20,31 @@ function plotValues() {
         }
 
     }
-    console.log(itemArray[0])
-    console.log(itemArray[1])
 
-
-
-    // ---- get html element and create a graph from the parsed json array
-    TESTER = document.getElementById('tester');
-    Plotly.plot(TESTER, [{
+    PLOT = thisElement.parentNode;
+    Plotly.newPlot(PLOT, [{
         x: itemArray[1],
         y: itemArray[0]
     }], {
         margin: { t: 0 }
     });
+    clearData();
 }
 
-function addPlot(newPlotName) {
-    var plotDiv = document.getElementById('plotDiv');
-    var newPlot = document.createElement("div");
-    newPlot.setAttribute("id", newPlotName);
-    plotDiv.appendChild(newPlot);
+// ---- create a new independent plot on the same HTML document
+function addPlot() {
+    // ---- clear old json data beforehand
+    clearData();
+
+
+    // ---- create new empty plot in the 'getData' div and append
+    var mainDiv = document.getElementById('mainDiv');
+    var plotDiv = document.getElementById('getData');
+    var divClone = plotDiv.cloneNode(true);
+    var childPlotlyDiv = divClone.getElementsByClassName("plot-container plotly");
+    for (item in childPlotlyDiv) {
+        childPlotlyDiv[item].innerHTML = ''
+    }
+    mainDiv.appendChild(divClone);
+
 }
