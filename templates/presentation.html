@@ -1,0 +1,33 @@
+<html>
+    <head> 
+        <script type="text/javascript" src="./../static/globalVariables.js"></script>
+        <script src="./../static/getData.js"></script>
+        <script src="./../static/graphData.js"></script>
+        <script src="./../static/clearData.js"></script>
+        <script type="text/javascript" src="https://cdn.plot.ly/plotly-1.9.0.min.js"></script>
+
+    </head>
+
+    <body> 
+        <button onclick='getData("allPairs")'>Click pairs</button>
+        <button onclick="getData('allValues')">Click values</button>
+        <button onclick="getData('allKeys')">Click keys</button>
+        <button onclick="clearData()">Clear Array Data</button>
+        <button onclick="addPlot()">Add new Plot</button>
+
+
+        </br>
+                </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        <div id="plotDiv">
+            <div id="tester" style="width:800px;height:600px;"></div>
+        </div>
+        <button onclick="plotValues()">Plot Values</button>
+
+    </body>
+
+</html>
