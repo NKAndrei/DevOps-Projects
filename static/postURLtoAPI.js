@@ -5,14 +5,14 @@ function callbackFunction(response) {
 // ---- get a new url from which to extract data and sent it to our Python backend for processing
 function sendURL() {
     var urlValue = document.getElementById('inputId').value;
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
+    var httpRequest = new XMLHttpRequest();
+    httpRequest.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            callbackFunction(xhttp.responseText)
+            callbackFunction(httpRequest.responseText)
         }
     }
-    xhttp.open('POST', 'http://127.0.0.1:5000/newData', true);
-    xhttp.setRequestHeader("Content-type", "application/json");
+    httpRequest.open('POST', 'http://127.0.0.1:5000/newData', true);
+    httpRequest.setRequestHeader("Content-type", "application/json");
     jsonURL = "{" + "\"url\"" + ":" + "\"" + urlValue + "\"" + "}";
-    xhttp.send(jsonURL);
+    httpRequest.send(jsonURL);
 }
