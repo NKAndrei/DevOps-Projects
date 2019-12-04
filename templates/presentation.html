@@ -1,6 +1,7 @@
 <html>
     <head> 
         <script type="text/javascript" src="./../static/globalVariables.js"></script>
+        <script type="text/javascript" src="./../static/postURLtoAPI.js"></script>
         <script src="./../static/getData.js"></script>
         <script src="./../static/graphData.js"></script>
         <script src="./../static/clearData.js"></script>
@@ -20,7 +21,9 @@
                 </br>
                 </br>
                 <div id="plotDiv" style="width:600px;height:400px;">
-                     <button onclick='addPlot()'>Add new plot</button>
+                    New URL: <input type='text' name='urlAddress' id='inputId'>
+                    <button onclick='sendURL()'>
+                    <button onclick='addPlot()'>Add new plot</button>
                     <button onclick="clearGraph(this)">Clear Graph</button>
                     <button onclick="plotValues(this);">Plot Values</button>
                 </div>
