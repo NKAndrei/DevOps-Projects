@@ -3,12 +3,12 @@ from flask_restful import Resource, Api
 from resources import GetAll, GetKeys, GetPairs, GetValues, GetNewData
 
 
+
 ##TODO ---- add a web terminal that can connect to any docker container ---- similar to google cloud terminal
 app = Flask(__name__)
 api = Api(app)
 ##web_page_url = 'https://api.exchangeratesapi.io/latest'
 key = 'rates'
-
 
 
 

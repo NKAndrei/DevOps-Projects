@@ -18,7 +18,7 @@ def getLists(elements_to_parse):
 
 
 ##! ---- End User Functions
-def parse_string_to_json(string_to_parse):
+def parse_json_string_to_object(string_to_parse):
     parsed_json = json.loads(string_to_parse)
     return parsed_json
 
