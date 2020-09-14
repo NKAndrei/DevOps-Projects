@@ -13,9 +13,9 @@ Technologies used:
  
  
 Modules and roles:
- - main_flask the entry point of the application
- - web_requests used to execute requests to different exchange api
- - resource contains the api calls used to send, receive and process the data
+ - main_flask - the entry point of the application
+ - web_requests - used to execute requests to different exchange api
+ - resource - contains the api calls used to send, receive and process the data
  - parse_data - a parser used to extract useful information from the exchange api response
- - mongoDB used to store data of specific graphs and compare them later on
- - db_tests test the connection and methods on the db
+ - mongoDB - used to store data of specific graphs and compare them later on
+ - db_tests - test the connection and methods on the db
