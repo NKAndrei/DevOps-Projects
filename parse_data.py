@@ -2,23 +2,23 @@ import json
 
 
 ##! ---- Helper Functions
-def getKeyDepth(jsonStructure, keyDepth):
-    if len(keyDepth) == 0:
-        return jsonStructure
-    if len(keyDepth) != 0:
-        return jsonStructure[keyDepth]
+def get_key_depth(json_structure, key_depth):
+    if len(key_depth) == 0:
+        return json_structure
+    if len(key_depth) != 0:
+        return json_structure[key_depth]
 
-def getLists(elements_to_parse):
-    listOfElements = []
+def get_lists(elements_to_parse):
+    list_of_elements = []
     for x in elements_to_parse:
-        listOfElements.append(x)
-    return listOfElements
+        list_of_elements.append(x)
+    return list_of_elements
 ##! ---- Helper Functions
 
 
 
 ##! ---- End User Functions
-def parse_string_to_json(string_to_parse):
+def parse_json_string_to_object(string_to_parse):
     parsed_json = json.loads(string_to_parse)
     return parsed_json
 
@@ -27,30 +27,30 @@ def parse_dict_to_json(dict_to_parse):
     return json_struct
 
 def parse_list_to_json(list_to_parse, key_name_to_add):
-    jsonString = "{" + "\"" + key_name_to_add + "\"" + " : "  + str(list_to_parse)  + "}"
-    jsonString = jsonString.replace("'", "\"")
-    return jsonString
+    json_string = "{" + "\"" + key_name_to_add + "\"" + " : "  + str(list_to_parse)  + "}"
+    json_string = json_string.replace("'", "\"")
+    return json_string
 
-def getKeys(jsonStructure, keyDepth):
-    keyNames = getKeyDepth(jsonStructure, keyDepth)
-    return getLists(keyNames.keys())
+def get_keys(json_structure, key_depth):
+    key_names = get_key_depth(json_structure, key_depth)
+    return get_lists(key_names.keys())
 
-def getValues(jsonStructure, keyDepth):
-    keyNames = getKeyDepth(jsonStructure, keyDepth)
-    return getLists(keyNames.values())
+def get_values(json_structure, key_depth):
+    key_names = get_key_depth(json_structure, key_depth)
+    return get_lists(key_names.values())
      
-def getPairs(jsonStructure, keyDepth):
-    keyNames = getKeyDepth(jsonStructure, keyDepth)
-    newDict = dict(keyNames.items())
-    return newDict
+def get_pairs(json_structure, key_depth):
+    key_names = get_key_depth(json_structure, key_depth)
+    new_dict  = dict(key_names.items())
+    return new_dict
 ##! ---- End User Functions
 
 
 
 ##TODO ---- need to define the rest of these ---- more specific functions
-def getDates(jsonStructure):
+def get_dates(json_structure):
     return ""
-def getExchangeType(jsonStructure):
+def get_exchange_type(json_structure):
     return ""
-def getDataByKey(jsonStructure, key):
+def get_data_by_key(json_structure, key):
     return ""
