@@ -1,6 +1,7 @@
 # PythonStatisticsPresentation
 
 Small project to create a statistics presenation from information downloaded from an api (used as a college project)
+
 Uses flask, python and mongodb do download json data from an exchange rates broker and create a visual statistics presentation in javascript.
 
 Technologies used:
