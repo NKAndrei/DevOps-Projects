@@ -12,10 +12,10 @@ file.close()
 
 
 ## ---- insert data into db, retrieve it and delete it
-operations.putOne(json.loads(data))
-print(str(operations.putOne(json.loads("{ \"id\" : 7}"))))
+operations.put_one(json.loads(data))
+print(str(operations.put_one(json.loads("{ \"id\" : 7}"))))
 print("objects inserted")
-print(operations.getOne(json.loads("{ \"id\" : 7}"), json.loads("{ \"id\" : 1 }")))
-for x in operations.getAll(json.loads("{}"), json.loads("{}")):
+print(operations.get_one(json.loads("{ \"id\" : 7}"), json.loads("{ \"id\" : 1 }")))
+for x in operations.get_all(json.loads("{}"), json.loads("{}")):
     print(x)
-print(operations.removeAll(json.loads("{}")).deleted_count)
+print(operations.remove_all(json.loads("{}")).deleted_count)
